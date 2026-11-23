@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Elites Lounge — Premium Barbing Salon</title>
+<meta name="description" content="Elites Lounge is a premium barbing salon offering precision haircuts, beard sculpting, hot towel shaves and grooming for the modern gentleman." />
+<meta name="theme-color" content="#0d0d0f" />
+
+<!-- Open Graph -->
+<meta property="og:title" content="Elites Lounge — Premium Barbing Salon" />
+<meta property="og:description" content="Precision cuts, beard sculpting and grooming for the modern gentleman." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<div class="topbar">
+  <div class="wrap topbar__inner">
+    <span class="topbar__item"><span class="dot"></span> Open today · 9:00 AM – 9:00 PM</span>
+    <span class="topbar__sep"></span>
+    <a class="topbar__item" href="tel:+2348000000000">+234 800 000 0000</a>
+    <span class="topbar__sep"></span>
+    <span class="topbar__item topbar__item--hide">Walk-ins welcome · Appointments preferred</span>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a href="#top" class="brand" aria-label="Elites Lounge home">
+      <span class="brand__mark" aria-hidden="true">
+        <svg viewBox="0 0 48 48" fill="none"><path d="M24 4 7 13v13c0 10 7.2 16.6 17 19 9.8-2.4 17-9 17-19V13L24 4Z" stroke="currentColor" stroke-width="2.4"/><path d="M17 23l5 5 10-11" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </span>
+      <span class="brand__text">
+        <strong>Elites</strong><em>Lounge</em>
+        <small>Barbing &amp; Grooming</small>
+      </span>
+    </a>
+
+    <nav class="nav__links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#team">Barbers</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#visit">Visit</a>
+      <a href="#book" class="btn btn--sm btn--gold">Book a Chair</a>
+    </nav>
+
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero__glow" aria-hidden="true"></div>
+  <div class="hero__grid-lines" aria-hidden="true"></div>
+
+  <div class="wrap hero__inner">
+    <div class="hero__copy">
+      <p class="eyebrow"><span class="eyebrow__line"></span> Est. Abuja · Nigeria</p>
+      <h1 class="hero__title">
+        Sharp cuts.<br />
+        <span class="grad">Sharper</span> confidence.
+      </h1>
+      <p class="hero__lead">
+        Elites Lounge is where precision meets comfort. Clean fades, sculpted beards
+        and a hot towel finish — delivered by barbers who treat every chair like a throne.
+      </p>
+
+      <div class="hero__cta">
+        <a href="#book" class="btn btn--gold btn--lg">Book a Chair</a>
+        <a href="#services" class="btn btn--ghost btn--lg">See Services &amp; Prices</a>
+      </div>
+
+      <ul class="hero__stats">
+        <li><strong>4.9<span>★</span></strong><span>Client rating</span></li>
+        <li><strong>6</strong><span>Master barbers</span></li>
+        <li><strong>20<span>min</span></strong><span>Avg. wait time</span></li>
+      </ul>
+    </div>
+
+    <!-- Decorative chair/razor composition, pure CSS+SVG (swap for a real photo later) -->
+    <div class="hero__art" aria-hidden="true">
+      <div class="art-card art-card--1">
+        <svg viewBox="0 0 120 120" fill="none">
+          <circle cx="60" cy="60" r="56" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 6"/>
+          <path d="M34 86c0-18 12-30 26-30s26 12 26 30" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="60" cy="42" r="16" stroke="currentColor" stroke-width="3"/>
+          <path d="M44 34c6-8 26-8 32 0" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <span>The Signature Fade</span>
+      </div>
+      <div class="art-card art-card--2">
+        <svg viewBox="0 0 120 120" fill="none">
+          <path d="M20 40h50a26 26 0 1 1 0 52H34" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+          <circle cx="24" cy="40" r="7" stroke="currentColor" stroke-width="3"/>
+          <circle cx="34" cy="92" r="7" stroke="currentColor" stroke-width="3"/>
+        </svg>
+        <span>Hot Towel Shave</span>
+      </div>
+      <div class="art-card art-card--3">
+        <span class="art-card__price">from ₦3,500</span>
+        <span>Every cut includes a line-up, wash &amp; finish</span>
+      </div>
+      <div class="pole" aria-hidden="true"><i></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MARQUEE ============ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee__track">
+    <span>Precision Fades</span><span>•</span><span>Beard Sculpting</span><span>•</span>
+    <span>Hot Towel Shaves</span><span>•</span><span>Kids Cuts</span><span>•</span>
+    <span>Dye &amp; Tone</span><span>•</span><span>Scalp Care</span><span>•</span>
+    <span>Precision Fades</span><span>•</span><span>Beard Sculpting</span><span>•</span>
+    <span>Hot Towel Shaves</span><span>•</span><span>Kids Cuts</span><span>•</span>
+    <span>Dye &amp; Tone</span><span>•</span><span>Scalp Care</span><span>•</span>
+  </div>
+</div>
+
+<!-- ============ SERVICES ============ -->
+<section class="section" id="services">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow"><span class="eyebrow__line"></span> The Menu</p>
+      <h2 class="section__title">Services &amp; Prices</h2>
+      <p class="section__sub">Transparent pricing, no surprises. Every service ends with a wash, line-up and finishing touch.</p>
+    </header>
+
+    <div class="services">
+      <article class="svc svc--feature">
+        <span class="svc__tag">Most booked</span>
+        <h3>The Elite Cut</h3>
+        <p>A full consultation, precision fade or taper, razor line-up, wash and styling. Our signature experience from start to finish.</p>
+        <div class="svc__foot"><span class="svc__price">₦6,000</span><span class="svc__time">45 min</span></div>
+      </article>
+
+      <article class="svc">
+        <h3>Classic Haircut</h3>
+        <p>Clean clipper cut with a crisp line-up and finish.</p>
+        <div class="svc__foot"><span class="svc__price">₦3,500</span><span class="svc__time">30 min</span></div>
+      </article>
+
+      <article class="svc">
+        <h3>Beard Sculpt &amp; Trim</h3>
+        <p>Shaped, balanced and conditioned with beard oil.</p>
+        <div class="svc__foot"><span class="svc__price">₦2,500</span><span class="svc__time">20 min</span></div>
+      </article>
+
+      <article class="svc">
+        <h3>Hot Towel Shave</h3>
+        <p>Steamed towel, straight razor, soothing balm finish.</p>
+        <div class="svc__foot"><span class="svc__price">₦4,000</span><span class="svc__time">30 min</span></div>
+      </article>
+
+      <article class="svc">
+        <h3>Cut + Beard Combo</h3>
+        <p>The full reset — haircut and beard shaped together.</p>
+        <div class="svc__foot"><span class="svc__price">₦5,500</span><span class="svc__time">50 min</span></div>
+      </article>
+
+      <article class="svc">
+        <h3>Kids Cut <small>(under 12)</small></h3>
+        <p>Patient, playful and sharp. Little gentlemen welcome.</p>
+        <div class="svc__foot"><span class="svc__price">₦2,500</span><span class="svc__time">25 min</span></div>
+      </article>
+
+      <article class="svc">
+        <h3>Dye &amp; Tone</h3>
+        <p>Grey coverage or a bold tone, blended naturally.</p>
+        <div class="svc__foot"><span class="svc__price">₦5,000</span><span class="svc__time">40 min</span></div>
+      </article>
+
+      <article class="svc">
+        <h3>Scalp Treatment</h3>
+        <p>Deep cleanse, exfoliation and a relieving massage.</p>
+        <div class="svc__foot"><span class="svc__price">₦4,500</span><span class="svc__time">30 min</span></div>
+      </article>
+    </div>
+
+    <p class="services__note">Home service available within Abuja from ₦15,000 · <a href="#book">Request a visit</a></p>
+  </div>
+</section>
+
+<!-- ============ WHY US ============ -->
+<section class="section section--alt" id="why">
+  <div class="wrap why">
+    <div class="why__copy">
+      <p class="eyebrow"><span class="eyebrow__line"></span> Why Elites Lounge</p>
+      <h2 class="section__title">More than a haircut.<br />It&rsquo;s a reset.</h2>
+      <p class="section__sub">
+        We built Elites Lounge around one idea — a man should leave looking like the best
+        version of himself, and feeling like it too. Clean tools, cold drinks, good music,
+        no rush.
+      </p>
+      <a href="#book" class="btn btn--gold">Reserve your slot</a>
+    </div>
+
+    <ul class="why__list">
+      <li>
+        <span class="why__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M12 2 4 6v6c0 5 3.4 8.3 8 10 4.6-1.7 8-5 8-10V6l-8-4Z" stroke="currentColor" stroke-width="2"/><path d="M9 12l2 2 4-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+        <div><h3>Sterilised every time</h3><p>Fresh blades, sanitised clippers and single-use neck strips for every client. No exceptions.</p></div>
+      </li>
+      <li>
+        <span class="why__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        </span>
+        <div><h3>We respect your time</h3><p>Book a slot and you sit at your slot. Average wait is under 20 minutes, even on Saturdays.</p></div>
+      </li>
+      <li>
+        <span class="why__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="M5 20V9l7-5 7 5v11" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M9.5 20v-6h5v6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </span>
+        <div><h3>A lounge, not a queue</h3><p>Air-conditioned space, Wi-Fi, chilled drinks and football on the screen while you wait.</p></div>
+      </li>
+      <li>
+        <span class="why__icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none"><path d="m12 3 2.6 5.6 6.1.8-4.5 4.2 1.2 6-5.4-3-5.4 3 1.2-6L3.3 9.4l6.1-.8L12 3Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
+        </span>
+        <div><h3>Barbers who listen</h3><p>Every cut starts with a consultation. Bring a picture, bring an idea, or let us advise.</p></div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ TEAM ============ -->
+<section class="section" id="team">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow"><span class="eyebrow__line"></span> The Chair Masters</p>
+      <h2 class="section__title">Meet the barbers</h2>
+      <p class="section__sub">Six hands, one standard. Request your barber by name when you book.</p>
+    </header>
+
+    <!-- TEMPLATE CONTENT: replace names, specialities and initials with your real team -->
+    <div class="team">
+      <article class="member">
+        <div class="member__photo" aria-hidden="true"><span>TA</span></div>
+        <h3>Tunde A.</h3>
+        <p class="member__role">Master Barber · Founder</p>
+        <p class="member__spec">Skin fades &amp; scissor work</p>
+      </article>
+      <article class="member">
+        <div class="member__photo" aria-hidden="true"><span>MB</span></div>
+        <h3>Musa B.</h3>
+        <p class="member__role">Senior Barber</p>
+        <p class="member__spec">Beard sculpting &amp; shaves</p>
+      </article>
+      <article class="member">
+        <div class="member__photo" aria-hidden="true"><span>CE</span></div>
+        <h3>Chidi E.</h3>
+        <p class="member__role">Barber &amp; Colourist</p>
+        <p class="member__spec">Dye, tone &amp; grey blending</p>
+      </article>
+      <article class="member">
+        <div class="member__photo" aria-hidden="true"><span>SO</span></div>
+        <h3>Samuel O.</h3>
+        <p class="member__role">Barber</p>
+        <p class="member__spec">Kids cuts &amp; classic tapers</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section class="section section--alt" id="gallery">
+  <div class="wrap">
+    <header class="section__head">
+      <p class="eyebrow"><span class="eyebrow__line"></span> The Work</p>
+      <h2 class="section__title">Fresh out the chair</h2>
+      <p class="section__sub">Drop your own shots into <code>assets/</code> and swap these placeholders out.</p>
+    </header>
+
+    <!-- TEMPLATE CONTENT: replace each .shot with <img src="assets/your-photo.jpg" alt="..."> -->
+    <div class="gallery">
+      <figure class="shot shot--tall"><figcaption>Skin fade + line-up</figcaption></figure>
+      <figure class="shot"><figcaption>Beard sculpt</figcaption></figure>
+      <figure class="shot"><figcaption>Classic taper</figcaption></figure>
+      <figure class="shot shot--wide"><figcaption>Hot towel finish</figcaption></figure>
+      <figure class="shot"><figcaption>Kids cut</figcaption></figure>
+      <figure class="shot"><figcaption>Dye &amp; tone</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ============ BOOKING ============ -->
+<section class="section" id="book">
+  <div class="wrap book">
+    <div class="book__panel">
+      <p class="eyebrow"><span class="eyebrow__line"></span> Book a Chair</p>
+      <h2 class="section__title">Reserve in 30 seconds</h2>
+      <p class="section__sub">Fill this in and it opens WhatsApp with your request ready to send.</p>
+
+      <form class="form" id="bookForm" novalidate>
+        <div class="field">
+          <label for="name">Your name</label>
+          <input type="text" id="name" name="name" placeholder="e.g. Gamal D." required />
+        </div>
+
+        <div class="field">
+          <label for="service">Service</label>
+          <select id="service" name="service" required>
+            <option value="The Elite Cut">The Elite Cut — ₦6,000</option>
+            <option value="Classic Haircut">Classic Haircut — ₦3,500</option>
+            <option value="Beard Sculpt &amp; Trim">Beard Sculpt &amp; Trim — ₦2,500</option>
+            <option value="Hot Towel Shave">Hot Towel Shave — ₦4,000</option>
+            <option value="Cut + Beard Combo">Cut + Beard Combo — ₦5,500</option>
+            <option value="Kids Cut">Kids Cut — ₦2,500</option>
+            <option value="Dye &amp; Tone">Dye &amp; Tone — ₦5,000</option>
+            <option value="Scalp Treatment">Scalp Treatment — ₦4,500</option>
+            <option value="Home service">Home service (Abuja)</option>
+          </select>
+        </div>
+
+        <div class="field field--half">
+          <label for="date">Preferred date</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+
+        <div class="field field--half">
+          <label for="time">Preferred time</label>
+          <input type="time" id="time" name="time" value="10:00" required />
+        </div>
+
+        <div class="field">
+          <label for="barber">Preferred barber <span class="opt">(optional)</span></label>
+          <select id="barber" name="barber">
+            <option value="">No preference</option>
+            <option value="Tunde A.">Tunde A.</option>
+            <option value="Musa B.">Musa B.</option>
+            <option value="Chidi E.">Chidi E.</option>
+            <option value="Samuel O.">Samuel O.</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="notes">Anything else? <span class="opt">(optional)</span></label>
+          <textarea id="notes" name="notes" rows="3" placeholder="Bringing a reference picture, coming with my son, etc."></textarea>
+        </div>
+
+        <button type="submit" class="btn btn--gold btn--lg btn--block">
+          Send booking on WhatsApp
+        </button>
+        <p class="form__hint" id="formHint" role="status"></p>
+      </form>
+    </div>
+
+    <aside class="book__aside" id="visit">
+      <h3 class="aside__title">Visit the lounge</h3>
+
+      <div class="aside__block">
+        <h4>Address</h4>
+        <p>12 Aminu Kano Crescent<br />Wuse II, Abuja, FCT</p>
+        <a class="link" href="https://maps.google.com/?q=Wuse+II+Abuja" target="_blank" rel="noopener">Open in Maps →</a>
+      </div>
+
+      <div class="aside__block">
+        <h4>Opening hours</h4>
+        <table class="hours">
+          <tbody>
+            <tr><th scope="row">Mon – Fri</th><td>9:00 AM – 9:00 PM</td></tr>
+            <tr><th scope="row">Saturday</th><td>8:00 AM – 10:00 PM</td></tr>
+            <tr><th scope="row">Sunday</th><td>12:00 PM – 7:00 PM</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="aside__block">
+        <h4>Talk to us</h4>
+        <p>
+          <a class="link" href="tel:+2348000000000">+234 800 000 0000</a><br />
+          <a class="link" href="mailto:hello@eliteslounge.example">hello@eliteslounge.example</a>
+        </p>
+        <div class="socials">
+          <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="17.2" cy="6.8" r="1.2" fill="currentColor"/></svg></a>
+          <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24" fill="none"><path d="M14 3v10.5a3.5 3.5 0 1 1-3.5-3.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M14 5c.8 2 2.4 3.2 4.5 3.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+          <a href="#" aria-label="X"><svg viewBox="0 0 24 24" fill="none"><path d="M4 4l16 16M20 4L4 20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></a>
+        </div>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <div class="footer__brand">
+      <span class="brand__text"><strong>Elites</strong><em>Lounge</em></span>
+      <p>Barbing &amp; grooming for the modern gentleman. Wuse II, Abuja.</p>
+    </div>
+    <nav class="footer__nav" aria-label="Footer">
+      <a href="#services">Services</a>
+      <a href="#team">Barbers</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#book">Book</a>
+    </nav>
+    <p class="footer__copy">&copy; <span id="year">2026</span> Elites Lounge. All rights reserved.</p>
+  </div>
+</footer>
+
+<a href="#book" class="fab" aria-label="Book a chair">
+  <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 2v6M16 2v6M3 10h18M5 6h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  <span>Book</span>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
