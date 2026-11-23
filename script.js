@@ -161,7 +161,13 @@
                 "?text=" + encodeURIComponent(lines.join("\n"));
 
       say("Opening WhatsApp with your booking…");
-      window.open(url, "_blank", "noopener");
+
+      // window.open can be blocked (popup blockers, sandboxed frames) -> fall back
+      var win = window.open(url, "_blank", "noopener");
+      if (!win) {
+        try { window.location.href = url; }
+        catch (err) { say("Couldn't open WhatsApp automatically — please call us instead.", true); }
+      }
     });
   }
 })();
