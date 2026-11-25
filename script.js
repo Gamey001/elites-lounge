@@ -13,7 +13,71 @@
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
   /* ------------------------------------------------------------
-     1. Mobile nav
+     1. Theme (light / dark)
+
+     The theme is already applied by the inline script in <head>,
+     so all this does is wire the button, remember the choice and
+     keep following the OS until the visitor picks a side.
+     ------------------------------------------------------------ */
+  var STORAGE_KEY = "el-theme";
+  var root  = document.documentElement;
+  var media = window.matchMedia ? window.matchMedia("(prefers-color-scheme: light)") : null;
+
+  var THEME_COLOR = { dark: "#0d0d0f", light: "#f6f3ec" };
+
+  var readSaved = function () {
+    try {
+      var v = localStorage.getItem(STORAGE_KEY);
+      return v === "light" || v === "dark" ? v : null;
+    } catch (e) { return null; }
+  };
+
+  var systemTheme = function () {
+    return media && media.matches ? "light" : "dark";
+  };
+
+  var themeBtn = document.getElementById("themeToggle");
+  var themeMeta = document.getElementById("themeColor");
+
+  var applyTheme = function (theme) {
+    root.setAttribute("data-theme", theme);
+
+    if (themeMeta) themeMeta.setAttribute("content", THEME_COLOR[theme] || THEME_COLOR.dark);
+
+    if (themeBtn) {
+      var next = theme === "light" ? "dark" : "light";
+      var label = "Switch to " + next + " mode";
+      themeBtn.setAttribute("aria-label", label);
+      themeBtn.setAttribute("title", label);
+      // pressed = "light mode is on"
+      themeBtn.setAttribute("aria-pressed", String(theme === "light"));
+    }
+  };
+
+  applyTheme(readSaved() || systemTheme());
+
+  // let colours animate only after the first paint
+  requestAnimationFrame(function () { root.classList.add("theme-ready"); });
+
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+      var next = root.getAttribute("data-theme") === "light" ? "dark" : "light";
+      applyTheme(next);
+      try { localStorage.setItem(STORAGE_KEY, next); } catch (e) {}
+    });
+  }
+
+  // follow the OS until the visitor has made a choice of their own
+  if (media) {
+    var onSystemChange = function () {
+      if (!readSaved()) applyTheme(systemTheme());
+    };
+    if (media.addEventListener) media.addEventListener("change", onSystemChange);
+    else if (media.addListener) media.addListener(onSystemChange);
+  }
+
+  /* ------------------------------------------------------------
+     2. Mobile nav
      ------------------------------------------------------------ */
   var toggle = $("#navToggle");
   var links  = $("#navLinks");
@@ -42,7 +106,7 @@
   }
 
   /* ------------------------------------------------------------
-     2. Sticky nav shadow
+     3. Sticky nav shadow
      ------------------------------------------------------------ */
   var nav = $("#nav");
   if (nav) {
@@ -54,7 +118,7 @@
   }
 
   /* ------------------------------------------------------------
-     3. Reveal on scroll
+     4. Reveal on scroll
      ------------------------------------------------------------ */
   var targets = $$(
     ".section__head, .svc, .why__copy, .why__list li, .member, .shot, .book__panel, .book__aside"
@@ -82,13 +146,13 @@
   }
 
   /* ------------------------------------------------------------
-     4. Footer year
+     5. Footer year
      ------------------------------------------------------------ */
   var year = $("#year");
   if (year) year.textContent = new Date().getFullYear();
 
   /* ------------------------------------------------------------
-     5. Booking form -> WhatsApp
+     6. Booking form -> WhatsApp
      ------------------------------------------------------------ */
   var form = $("#bookForm");
   var hint = $("#formHint");

@@ -17,7 +17,7 @@ python3 -m http.server 8080
 
 | Section | Purpose |
 | --- | --- |
-| Top bar + sticky nav | Opening status, phone, anchor navigation, mobile drawer |
+| Top bar + sticky nav | Opening status, phone, anchor navigation, light/dark toggle, mobile drawer |
 | Hero | Headline, dual CTA, trust stats, animated barber-pole composition |
 | Marquee | Scrolling strip of service keywords |
 | Services | 8 services with naira pricing and durations, one featured card |
@@ -31,6 +31,8 @@ python3 -m http.server 8080
 ## Tech notes
 
 - **No dependencies.** One external request: Google Fonts (Bebas Neue + Outfit).
+- **Light & dark themes.** Every colour resolves through a CSS custom property, so
+  the whole page flips by setting `data-theme="light"` on `<html>`. See below.
 - **Responsive** at 1040px, 860px and 640px breakpoints.
 - **Accessible**: semantic landmarks, labelled form fields, visible focus rings,
   `aria-expanded` on the nav toggle, and full `prefers-reduced-motion` support.
@@ -61,6 +63,30 @@ All placeholder content is marked with `TEMPLATE CONTENT` comments in `index.htm
    --gold:     #d9a84e;   /* accent      */
    --bone:     #f4f1ea;   /* body text   */
    ```
+   Change a colour in **both** `:root` and `:root[data-theme="light"]` so the two
+   themes stay in step.
+
+## Theming
+
+The page ships with a dark and a light palette and a toggle in the nav.
+
+- **Which one shows first** — a visitor's saved choice (`localStorage`, key
+  `el-theme`) wins; with no saved choice the page follows the operating system via
+  `prefers-color-scheme`, and keeps following it until they press the toggle.
+- **No flash** — a short inline script in `<head>` sets `data-theme` before the
+  first paint, so the page never renders in the wrong palette and then snap to the
+  right one.
+- **How the palettes are defined** — `:root` holds the dark values and
+  `:root[data-theme="light"]` overrides them. Two of the tokens are RGB triplets
+  rather than colours, because they feed `rgba()` tints:
+  ```css
+  --gold-rgb: 217, 168, 78;   /* gold tints, hover borders, glows */
+  --tint-rgb: 255, 255, 255;  /* hairlines over the background    */
+  ```
+- **Default the site to light** — change the fallback in the inline `<head>`
+  script and in `script.js` (`systemTheme()`) from `"dark"` to `"light"`.
+- **Drop the toggle entirely** — delete the `#themeToggle` button from
+  `index.html`. The inline script still honours the visitor's OS preference.
 
 ## Deploy
 

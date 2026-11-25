@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>Elites Lounge — Premium Barbing Salon</title>
 <meta name="description" content="Elites Lounge is a premium barbing salon offering precision haircuts, beard sculpting, hot towel shaves and grooming for the modern gentleman." />
-<meta name="theme-color" content="#0d0d0f" />
+<meta name="theme-color" content="#0d0d0f" id="themeColor" />
 
 <!-- Open Graph -->
 <meta property="og:title" content="Elites Lounge — Premium Barbing Salon" />
@@ -17,6 +17,22 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+
+<!-- Resolve the theme before first paint so the page never flashes the wrong one.
+     Saved choice wins; otherwise follow the operating system. -->
+<script>
+(function () {
+  try {
+    var saved = localStorage.getItem("el-theme");
+    var theme = saved === "light" || saved === "dark"
+      ? saved
+      : (window.matchMedia && window.matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    document.documentElement.setAttribute("data-theme", theme);
+  } catch (e) {
+    document.documentElement.setAttribute("data-theme", "dark");
+  }
+})();
+</script>
 </head>
 <body>
 
@@ -53,9 +69,24 @@
       <a href="#book" class="btn btn--sm btn--gold">Book a Chair</a>
     </nav>
 
-    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <div class="nav__actions">
+      <button class="theme-toggle" id="themeToggle" type="button"
+              aria-label="Switch to light mode" title="Switch to light mode" aria-pressed="false">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <circle cx="12" cy="12" r="4.4" stroke="currentColor" stroke-width="1.8"/>
+          <path d="M12 2.4v2.4M12 19.2v2.4M2.4 12h2.4M19.2 12h2.4M5.2 5.2l1.7 1.7M17.1 17.1l1.7 1.7M18.8 5.2l-1.7 1.7M6.9 17.1l-1.7 1.7"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M20.4 14.3A8.6 8.6 0 1 1 9.7 3.6a6.9 6.9 0 0 0 10.7 10.7Z"
+                stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </button>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </div>
 </header>
 
